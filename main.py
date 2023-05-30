@@ -2,7 +2,7 @@ import pygame, os
 
 WIDTH, HEIGHT = 800, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-
+pygame.display.set_caption('Medieval Mayhem')
 icon_1_image = 0
 
 def icons(): 
