@@ -5,8 +5,9 @@ Screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Medieval Mayhem')
 icon_1_image = 0
 
+players = {1:'rouge.png', 2:'druid.png', 3:'warrior.png', 4:'frog.png'}
+files = {1:'rouge', 2:'druid', 3:'warrior', 4:'frog'}
 
-def icons(): 
 
 def main_menu():
     while True:
