@@ -1,12 +1,13 @@
 import pygame, os
-
+from index import p1, p2
+import spites
 WIDTH, HEIGHT = 800, 600
 Screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Medieval Mayhem')
 icon_1_image = 0
 
-players = {1:'rouge.png', 2:'druid.png', 3:'warrior.png', 4:'frog.png'}
-files = {1:'rouge', 2:'druid', 3:'warrior', 4:'frog'}
+players = ['rouge.png','druid.png','warrior.png','frog.png']
+files = ['rouge','druid','warrior','frog']
 
 
 def main_menu():
@@ -15,6 +16,15 @@ def main_menu():
         for event in pygame.event.get():
             if event.type == quit:
                 pygame.quit()
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_t or pygame.K_y or pygame.K_u:
+                char_select(p1)
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_KP4 or pygame.K_KP5 or pygame.K_KP6:
+                char_select(p2)
+
 
 def select(s1, s2): 
     s1 = 2
@@ -32,7 +42,7 @@ def select(s1, s2):
             s2 = s1 and pygame.transform.rotate(icons, 135)
         
 
-def p1_icon_movement(keys_pressed, icons):
+def p1_icon_movement(keys_pressed, p1):
 
     if keys_pressed[pygame.K_a]: #If a is pressed and doesn't go past selection
         select = select - 1 and pygame.time.wait(150)
@@ -41,7 +51,7 @@ def p1_icon_movement(keys_pressed, icons):
     if keys_pressed[pygame.K_SPACE]:
         pick = 1
 
-def p2_icon_movement(keys_pressed, icons):
+def p2_icon_movement(keys_pressed, p2):
 
     if keys_pressed[pygame.K_LEFT]:
         Select = Select - 1 and pygame.time.wait(150)
@@ -55,10 +65,10 @@ def char_select():
     pick = 0
     keys_pressed = pygame.key.get_pressed()
     while pick == 0:
-        p1_icon_movement(keys_pressed, icons)
+        p1_icon_movement(keys_pressed, p1)
 
     while pick == 1:
-        p2_icon_movement(keys_pressed, icons)
+        p2_icon_movement(keys_pressed, p2)
     
     while pick == 2:
         main()
