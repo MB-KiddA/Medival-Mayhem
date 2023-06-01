@@ -1,4 +1,4 @@
-import pygame,os,
+import pygame,os
 
 druid_sprite = pygame.image.load(
     os.path.join('Druid', 'Druid.png'))
@@ -23,3 +23,9 @@ frog_sprite = pygame.image.load(
 
 Frog = pygame.transform.rotate(pygame.transform.scale(
     frog_sprite, (800, 600)), 270)
+
+Background_Menu = pygame.image.load(
+    os.path.join('Background', 'Background_Menu.png'))
+
+Background_Game = pygame.image.load(
+    os.path.join('Background', 'Background_Game'))
