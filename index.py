@@ -9,8 +9,8 @@ dt = 0
 run = True
 Vel = 10
 
-p1 =
-p2 =
+p1 =[]
+p2 =[]
 
 
 
@@ -18,7 +18,7 @@ def p1_movement(keys_pressed, icons):
 
     if keys_pressed[pygame.K_a] and p1.x - Vel > 0:  # LEFT
         p1.x -= Vel
-    if keys_pressed[pygame.K_d] and p1.x + Vel + p1.width < BORDER.x:  # RIGHT
+    if keys_pressed[pygame.K_d] and p1.x + Vel:  # RIGHT
         p1.x += Vel * dt
     if keys_pressed[pygame.K_w] and p1.y - Vel > 0:  # UP
         p1.y -= Vel * dt
