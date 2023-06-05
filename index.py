@@ -1,5 +1,6 @@
 import pygame, os
 import spites
+
 pygame.init()
 WIDTH, HEIGHT = 800, 600
 Screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -9,8 +10,8 @@ dt = 0
 run = True
 Vel = 10
 
-p1 =[]
-p2 =[]
+p1 = 0
+p2 = 0
 
 
 
