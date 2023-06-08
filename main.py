@@ -6,10 +6,9 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Medieval Mayhem')
 
 
-
 def draw_sprite():
     WIN.blit(Background_Menu, (0, 0))
-    WIN.blit(Rouge_Icon_prite, 100, 600)
+    WIN.blit(Rouge_Icon_sprite, 100, 600)
 
 
     pygame.display.update()
@@ -47,8 +46,10 @@ def char_select(keys_pressed, s1, pick):
 def main_menu():
     pick = 0
     s1 = 2
-    run = True
+    p1 = ''
+    p2 = ''
     clock = pygame.time.Clock()
+    run = True
     while run:
         clock.tick(60)
         for event in pygame.event.get():
@@ -65,13 +66,13 @@ def main_menu():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_t or pygame.K_y or pygame.K_u:
                     pick += 1
-                    if s1 == 1:
+                if s1 == 1:
                         p1 = Warrior
-                    elif s1 == 2:
+                elif s1 == 2:
                         p1 = Rouge
-                    elif s1 == 3:
+                elif s1 == 3:
                         p1 = Druid
-                    elif s1 == 4:
+                elif s1 == 4:
                         p1 = Frog
         
             if event.type == pygame.KEYDOWN:
@@ -85,8 +86,10 @@ def main_menu():
                         p2 = Druid
                     elif s1 == 4:
                         p2 = Frog
-            char_select(keys_pressed, s1, pick)          
+        char_select(keys_pressed, s1, pick)          
         
-            draw_sprite()
+        draw_sprite()
+    main_menu()
 
-main_menu()
+if __name__ == "__main__":
+    main_menu()
