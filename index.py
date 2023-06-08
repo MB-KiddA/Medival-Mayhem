@@ -1,5 +1,5 @@
 import pygame, os
-import spites
+from spites import *
 
 pygame.init()
 WIDTH, HEIGHT = 800, 600
